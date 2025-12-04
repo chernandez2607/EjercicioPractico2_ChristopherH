@@ -22,31 +22,27 @@ public class RolServiceImpl{
     @Autowired
     private RolRepository rolRepository;
 
-    @Override
+  
     @Transactional(readOnly = true)
     public List<Rol> listarRoles() {
         return rolRepository.findAll();
     }
 
-    @Override
     @Transactional(readOnly = true)
     public Rol buscarRolPorId(Long id) {
         return rolRepository.findById(id).orElse(null);
     }
 
-    @Override
     @Transactional
     public Rol guardarRol(Rol rol) {
         return rolRepository.save(rol);
     }
 
-    @Override
     @Transactional
     public void eliminarRol(Long id) {
         rolRepository.deleteById(id);
     }
 
-    @Override
     @Transactional(readOnly = true)
     public Rol buscarPorNombre(String nombre) {
         return rolRepository.findByNombre(nombre).orElse(null);
