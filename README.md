@@ -1,1 +1,0 @@
-# EjercicioPractico2_ChristopherH
